@@ -41,6 +41,16 @@
   function identityUsersTableController(toast, gettext, ldapAPI,Spinner, $scope, $rootScope) {
 
       $scope.selected = [];
+      $scope.users_policy = [];
+      $scope.rules=[{
+                      "id": "1",
+                      "name": "USB Restriction",
+                      "status": false
+                    }, {
+                      "id": "2",
+                      "name": "Screen shot Restriction",
+                      "status": true
+                    }]
         $scope.userquery = {
           order: 'username',
           limit: 15,

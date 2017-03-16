@@ -171,6 +171,53 @@
                                              md-boundary-links="true"></md-table-pagination>
                     </md-content>
                 </md-tab>
+
+                  <md-tab label="Security Policy">
+                    <md-content class="md-padding">                            
+                        
+                        <md-table-container>
+                            <table md-table multiple ng-model="selected" >
+                                <thead md-head md-order="computerquery.order">
+                                <tr md-row>
+                                    <th md-column><span class="md-title">Policy</span></th>
+                                     <th md-column><span class="md-title">Status</span></th>
+                                    
+                                </tr>
+                                
+                                </thead>
+                                <tbody md-body>
+                                <tr md-row ng-repeat="rule in rules">                                  
+                                    <td md-cell>
+                                    {$rule.name$}                        
+                                    </td>
+                                    <td md-cell>
+                                       <toggle-switch
+                                          ng-model="rule.status"
+                                          on-label="Enable"
+                                          off-label="Disable">
+                                        </toggle-switch>        
+                                    </td>
+
+                                    
+
+                                </tr>
+                                </tbody>
+                            </table>
+                              
+                        </md-table-container>
+                        
+
+                        <md-table-pagination md-limit="computerquery.limit" md-limit-options="[5, 10, 15, 30, 50, 100, 200]" md-page="computerquery.page"
+                                             md-total="{$ldapuserscount$}" md-page-select="true"
+                                             md-boundary-links="true"></md-table-pagination>
+                        <button type="button" class="btn btn-primary">Apply</button>
+                        <button type="button" class="btn btn-default" class="text-right">Cancel</button>
+                    </md-content>
+                </md-tab>
+
+
+
+
             </md-tabs>
         </md-card-content>
     </md-card>
